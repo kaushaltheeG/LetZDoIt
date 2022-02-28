@@ -40,18 +40,21 @@ function createListEle() {
     }
     //#endregion
 
-    //#region Priority Btn
+    //#region Priority Btn allowing the task to float to the top
     let priorityBtn = document.createElement("button");
 
     priorityBtn.appendChild(document.createTextNode("P"))
     listItem.appendChild(priorityBtn);
-    priorityBtn.addEventListener("click", priorityTask);
-
-    function priorityTask() {
+    priorityBtn.addEventListener("dblclick", function(e) {
         listItem.classList.toggle("priority");
-        //let currentFirstTask = document.getElementById("tasks")
-        ul.prepend(listItem);
-    }
+         ul.prepend(listItem);
+    });
+
+    //function priorityTask(e) {
+        //listItem.classList.toggle("priority");
+         //ul.prepend(listItem);
+  
+    //}
     //#endregion
 };
 
